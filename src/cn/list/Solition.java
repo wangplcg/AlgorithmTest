@@ -129,6 +129,24 @@ public class Solition {
         return node.next;
     }
 
+    /** 返回链表结点的中间结点 */
+    public ListNode middleNode(ListNode head) {
+        ListNode p1 = head;
+        ListNode p2 = head;
+        if (head == null) {
+            return null;
+        }
+        if (head.next == null) {
+            return head;
+        }
+
+        while (p2 != null && p2.next != null) {
+            p1 = p1.next;
+            p2 = p2.next.next;
+        }
+        return p1;
+    }
+
     public static void main(String[] args) {
         ListNode one = new ListNode(1);
         ListNode head = one;
